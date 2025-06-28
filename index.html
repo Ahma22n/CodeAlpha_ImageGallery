@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeAlpha-Image Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <div class="gallery-container">
+        <div class="gallery-header">
+            <div class="upload-container">
+                <input type="file" id="image-upload" accept="image/*" multiple style="display: none;">
+                <button class="upload-btn" id="upload-btn">+ Add Images</button>
+            </div>
+            <h1 class="gallery-title">Explore Our Gallery</h1>
+        </div>
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="nature">Nature</button>
+            <button class="filter-btn" data-filter="architecture">Architecture</button>
+            <button class="filter-btn" data-filter="travel">Travel</button>
+            <button class="filter-btn" data-filter="people">People</button>
+        </div>
+        
+        <div class="gallery-grid">
+        
+            <div class="gallery-card" data-category="nature">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8f513c5d-b5fc-4324-9321-ee05bd6903ac.png" alt="Majestic waterfall cascading down moss-covered rocks in a lush green forest" class="gallery-image">
+                <div class="overlay">
+                    <div class="image-title">Mountain Falls</div>
+                    <div class="image-category">Nature</div>
+                </div>
+            </div>
+            
+            <div class="gallery-card" data-category="nature">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/400dd137-be24-44a6-ab2f-0fa5ce112b47.png" alt="Golden sunset over calm ocean waves with silhouettes of palm trees" class="gallery-image">
+                <div class="overlay">
+                    <div class="image-title">Ocean Sunset</div>
+                    <div class="image-category">Nature</div>
+                </div>
+            </div>
+            
+            <div class="gallery-card" data-category="architecture">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/917a2c59-ff45-4bf6-9f24-99bf41f45e9f.png" alt="Glass skyscraper reflecting blue sky with geometric patterns" class="gallery-image">
+                <div class="overlay">
+                    <div class="image-title">Urban Reflection</div>
+                    <div class="image-category">Architecture</div>
+                </div>
+            </div>
+            
+            <div class="gallery-card" data-category="architecture">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/302b7fc9-2835-4928-a3c1-7ffab7c562e9.png" alt="Ancient stone cathedral with intricate Gothic architecture details" class="gallery-image">
+                <div class="overlay">
+                    <div class="image-title">Historic Cathedral</div>
+                    <div class="image-category">Architecture</div>
+                </div>
+            </div>
+            
+            <div class="gallery-card" data-category="travel">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c60387bc-63b3-4016-9d6e-f0c0b4f49e0a.png" alt="Colorful street market with vendors selling fresh produce and crafts" class="gallery-image">
+                <div class="overlay">
+                    <div class="image-title">Local Market</div>
+                    <div class="image-category">Travel</div>
+                </div>
+            </div>
+            
+            <div class="gallery-card" data-category="travel">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b3025c2a-f90f-4121-ad02-281a4c07b8a2.png" alt="Charming alpine village with wooden chalets surrounded by snowy peaks" class="gallery-image">
+                <div class="overlay">
+                    <div class="image-title">Alpine Retreat</div>
+                    <div class="image-category">Travel</div>
+                </div>
+            </div>
+            
+            <div class="gallery-card" data-category="people">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2fbc4124-297c-4b35-afaf-a9ff9ed20207.png" alt="Close-up portrait of an elderly person with weathered face telling a life story" class="gallery-image">
+                <div class="overlay">
+                    <div class="image-title">Wisdom</div>
+                    <div class="image-category">People</div>
+                </div>
+            </div>
+            
+            <div class="gallery-card" data-category="people">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7f887d5e-a231-4e5d-a608-ed08bd39f73e.png" alt="Couple dancing at golden hour on a rooftop with city skyline" class="gallery-image">
+                <div class="overlay">
+                    <div class="image-title">Golden Moment</div>
+                    <div class="image-category">People</div>
+                </div>
+            </div>
+            
+            <div class="gallery-card" data-category="nature">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a1000891-dfe6-4fa8-b4b4-3d58f46b9b6f.png" alt="Sunlight filtering through colorful autumn leaves in a dense forest" class="gallery-image">
+                <div class="overlay">
+                    <div class="image-title">Autumn Path</div>
+                    <div class="image-category">Nature</div>
+                </div>
+            </div>
+            
+            <div class="gallery-card" data-category="architecture">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/76c1e181-ecdd-4185-b1fe-84fefd515cb1.png" alt="Modern suspension bridge illuminated at night with city lights" class="gallery-image">
+                <div class="overlay">
+                    <div class="image-title">Night Bridge</div>
+                    <div class="image-category">Architecture</div>
+                </div>
+            </div>
+            
+            <div class="gallery-card" data-category="travel">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/36d2bd0f-468d-4f72-b6eb-e13230aa390b.png" alt="Lush green palm trees surrounding a small lake in the middle of sand dunes" class="gallery-image">
+                <div class="overlay">
+                    <div class="image-title">Desert Oasis</div>
+                    <div class="image-category">Travel</div>
+                </div>
+            </div>
+            
+            <div class="gallery-card" data-category="people">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0a9a79a2-ba5a-4cc4-a80c-ba13d7e16b75.png" alt="Group of diverse children laughing and playing in a sunny park" class="gallery-image">
+                <div class="overlay">
+                    <div class="image-title">Joyful Moments</div>
+                    <div class="image-category">People</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" id="lightbox-close" onclick="closeFullImage()">X</span>
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-img" id="lightbox-img">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+            <div class="lightbox-actions">
+                <button id="rename-btn" class="action-btn">Rename</button>
+                <button id="delete-btn" class="action-btn delete-btn">Delete</button>
+            </div>
+        </div>
+        <span class="lightbox-nav lightbox-prev" id="lightbox-prev">❮</span>
+        <span class="lightbox-nav lightbox-next" id="lightbox-next">❯</span>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
