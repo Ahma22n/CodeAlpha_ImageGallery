@@ -1,0 +1,315 @@
+:root {
+    --transition-speed: 0.3s;
+    --card-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    --card-height: 280px;
+}
+
+.gallery-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+    position: relative;
+    width: 100%;
+
+}
+
+.upload-container {
+    position: relative;
+    z-index: 1;
+}
+
+.upload-btn {
+    padding: 0.5rem 1.25rem;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-left: 0;
+    gap: 0.5rem;
+}
+
+.upload-btn:hover {
+    background: #2563eb;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8fafc;
+    color: #334155;
+}
+
+.gallery-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.gallery-title {
+    text-align: center;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #1e293b;
+    position: absolute;
+    width: max-content;
+}
+
+.gallery-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: #3b82f6;
+    margin: 0.5rem auto;
+    border-radius: 2px;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    padding: 0.5rem 1.25rem;
+    background: #e2e8f0;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    font-weight: 500;
+}
+
+.filter-btn:hover {
+    background: #bfdbfe;
+}
+
+.filter-btn.active {
+    background: #3b82f6;
+    color: white;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    height: var(--card-height);
+    transition: transform var(--transition-speed) ease;
+}
+
+.gallery-card:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all var(--transition-speed) ease;
+}
+
+.gallery-card:hover .gallery-image {
+    transform: scale(1.05);
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    padding: 1rem;
+    color: white;
+    opacity: 0;
+    transition: opacity var(--transition-speed) ease;
+}
+
+.gallery-card:hover .overlay {
+    opacity: 1;
+}
+
+.image-title {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.image-category {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* Lightbox styles */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.lightbox-img {
+    max-height: 80vh;
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+.lightbox-caption {
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    background: rgba(0,0,0,0.5);
+    padding: 1rem;
+    border-radius: 50%;
+}
+
+.lightbox-prev {
+    left: 20px;
+}
+
+.lightbox-next {
+    right: 20px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1001;
+    transition: transform 0.2s;
+}
+
+.lightbox-close:hover {
+    transform: scale(1.2);
+}
+
+.lightbox-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.action-btn {
+    padding: 8px 16px;
+    background: #3b82f6;
+    color: rgb(253, 252, 252);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.action-btn:hover {
+    background: #2563eb;
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.delete-btn {
+    background: #ef4444;
+}
+
+.delete-btn:hover {
+    background: #dc2626;
+}
+
+.confirm-delete {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.confirm-delete button {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+}
+
+.rename-input {
+    padding: 8px;
+    border: 1px solid #f5f3f3;
+    color: #1e293b;
+    border-radius: 4px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+    
+    .filter-buttons {
+        justify-content: flex-start;
+    }
+    
+    .lightbox-nav {
+        font-size: 1.5rem;
+        padding: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-title {
+        font-size: 2rem;
+    }
+}
